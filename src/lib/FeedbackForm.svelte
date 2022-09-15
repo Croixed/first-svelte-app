@@ -3,9 +3,7 @@
   import Button from "./Button.svelte";
   import RatingSelect from "./RatingSelect.svelte"
   import { v4 as uuidv4 } from 'uuid'
-  import { createEventDispatcher } from 'svelte';
-
-  const dispatch = createEventDispatcher();
+  import { FeedbackStore } from "../stores";
 
   let text = '';
   let rating = 10;
@@ -33,7 +31,10 @@
         rating: +rating // plus sign makes rating number(?)
       }
 
-      dispatch('add-feedback', newFeedback);
+      FeedbackStore.update((currentFb) => {
+        return [newFeedback, ...currentFb]
+      })
+
       text = '';
     }
   }

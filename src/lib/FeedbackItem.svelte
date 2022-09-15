@@ -45,4 +45,8 @@
     border: none;
     border-radius: 4px;
   }
+
+  .text-display {
+    margin: 0;
+  }
 </style>

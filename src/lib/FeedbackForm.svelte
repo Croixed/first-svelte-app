@@ -41,7 +41,7 @@
 
 </script>
 
-<Card>
+<Card class="card">
   <header>
     <h2>how would you rate us?</h2>
   </header>
@@ -49,8 +49,8 @@
   <RatingSelect on:rating-select={handleSelect}/>
     <div class="input-group">
       <input type="text" on:input={handleInput} bind:value={text} placeholder="Give us feedback">
-      <Button disabled={btnDisabled} type="submit">Send</Button>
     </div>
+    <Button disabled={btnDisabled} type="submit">Send</Button>
     {#if message} 
     <div class="message">
       {message}
@@ -61,15 +61,23 @@
 </Card>
 
 <style>
+  
+
   header {
-    min-width: 400px;
     margin: auto;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   header h2 {
     font-size: 22px;
     font-weight: 600;
     text-align: center;
+    margin-top: 0;
   }
 
   .input-group {
@@ -78,6 +86,11 @@
     padding: 8px 10px;
     border-radius: 8px;
     margin-top: 15px;
+
+    width: 100%;
+
+    align-items: center;
+    flex-direction: column;
   }
 
   input {
@@ -85,6 +98,8 @@
     border: none;
     font-size: 16px;
     background-color: var(--darker);
+    width: 100%;
+    height: 2em;
     color: white;
   }
 

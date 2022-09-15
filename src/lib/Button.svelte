@@ -16,7 +16,7 @@
   width: 100px;
   height: 40px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-top: 12px;
 }
 
 .primary {
